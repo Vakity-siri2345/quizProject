@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {%load static from staticfiles %}
+    {{app_name}}
+    Home
+    {% if request.user.is_authenticated %}
+    Take Test
+    {% endif %}
+    {% if request.user.is_autheticated %}
+    welcome {{request.user}}
+    Logout
+    {% else %}
+    Login
+    Sign up
+    Admin
+    {% endif %}
+    {% block content %} {% endblock content %}
+  </body>
+</html>
